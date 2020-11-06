@@ -1,21 +1,104 @@
 <!doctype html>
 <html>
 	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Chloe's Portfolio</title>
-		<link rel="stylesheet" href="main.css">
+		<link rel="stylesheet" href="main.css" />
 	</head>
 	<body>
-		<h1 class="title">Chloe Keilers's Portfolio</h1>
-		<!-- NavBar for #APP #Data #CGI #Adobe -->
+		<h1 class="title">Chloe Madsen Keilers</h1>
+		<div class="header">
+			<h3 class="title">Driven by curiosity. Inspired to create.</h3>
+		</div>
+		
 		<!-- -->
-		<div id="#APP">
-			<a href="app.html">Testing</a>
+		<div id="home">
+			<div class="grid">
+				<div class="article" onclick="openArticle('snow')">
+					<figure>
+						<img src="images/blender.png" alt="A snowman under a shiny copper lamp with a transparent aurora cone and movie pictures in the background" />
+						<figcaption>The Snowman</figcaption>
+					</figure>
+				</div>
+				<div class="article" onclick="openArticle('opportunity')">
+					<figure>
+						<img src="images/finalop.png" alt="A few Roman temples and an Italian dome buried in a lunar landscape with rover in foreground and Voyager whizzing by a cloudy Earth." />
+						<figcaption>Opportunity Knocks</figcaption>
+					</figure>
+				</div>
+			</div>
 		</div>
-		<div id="#Data">
+		<div id="snow" style="display:none">
+			<div class="exit" onclick="closeArticle('snow')">X</div>
+
+			<div class="author">Creators: Chloe Keilers, Raymond Yao.</div>
+			<div class="info">Blender, OpenGL, Raytracing</div>
+			<div class="date">December 2019</div>
+
+			<div class="body">This is our final project for CS 148, an introduction to computer graphics. We wanted to create an image of fantasy and including a focus on a reflexive surface. Inspired by the upcoming winter break and a beautiful picture of an <a href="https://pbs.twimg.com/media/EEbtBwPUwAATWE1.jpg">aurora</a>, we decided on a little snowman under a metallic lamp that reflected the room as the reference image shows.</div>
+
+			<img src="images/lamp.png" class="portrait" alt="A copper lamp reflecting the room" />
+
+			<div class="body">Each of us created several objects in the room include the snowman with the hat, the lamp, and the computer monitor. Our first draft was in OpenGL with horrible lighting.</div>
+
+			<img src="images/opengl.png" class="portrait" alt="A snowman on a desk with a lamp and really crazy lighting" />
+
+			<div class="body">While we continued to find objects and texture images for the rest of the room, we used Blender to arrange objects, place lighting, and test camera angles. In lieu of a flat background in the first draft, we put holiday movie posters on the background wall - <a href="https://hgtvhome.sndimg.com/content/dam/images/hgtv/editorial/blogs/unsized/Kayla/Rudolph.jpg">Rudolph Poster</a>, <a href="https://www.deleuksteonderzetters.nl/media/catalog/product/cache/30/small_image/9df78eab33525d08d6e5fb8d27136e95/1/1/1101017-xmas26.jpg">Frosty Poster</a>, and the <a href="https://storage.googleapis.com/circlesoft/document/photos/002/745/029/large_9780008183493.jpg?1544841950">Grinch Poster</a>. The computer monitor is a screenshot of the class’s forum page with a cheeky request from the snowman on how to get an A.</div>
+
+			<img src="images/blender.png" class="landscape" alt="A snowman under a shiny copper lamp with a transparent aurora cone and movie pictures in the background" />
+
+			<div class="body">We ran into some trouble when translating our final vision from Blender to raytracing, specifically with a semi-transparent cone with an aurora texture. The cone could either be transparent, but only let the ray bounce once or reflexive. </div>
+
+			<img src="images/rayreflex.png" class="landscape" alt="A darker image than the Blender image due to the rays not bouncing in transparent and reflexive material.">
+
+			<div class="body">One test we did try was changing the color of the lights to see what was going through which resulted in a cool picture but alas no solution. </div>
+
+			<img src="images/raydisco.png" class="landscape" alt="As a test, different color lights were placed in the lamp which resulted in a very colorful image.">
+
+			<div class="body">Due to time constraints we had to remove the cone for the final image. The final raytrace rendering took 24 hours to compile.</div>
+
+			<img src="images/rayfinal.png" class="landscape" alt="The final ray-trade image, just as shown in the Blender but a little darker.">
+
 		</div>
-		<div id="#CGI">
+		<div id="opportunity" style="display:none">
+			<div class="exit" onclick="closeArticle('opportunity')">X</div>
+
+			<div class="author">Creator: Chloe Keilers</div>
+			<div class="info">Blender</div>
+			<div class="date">October 2019</div>
+
+			<div class="body">While browsing NASA&apos;s many galleries and archives of their various rover, telescope, and other space-related missions, I came across <a href="https://nasa3d.arc.nasa.gov/detail/voyager-2 "/>Voyager</a> in NASA’s 3D gallery. On a separate adventure, I had studied Roman and Italian architecture. Following Vitruvius&apos;s guideline, the only Roman architect who wrote a book, I made a simple Roman temple object in Blender. What would happened if we combined both NASA’s space gallery and old ancient buildings?</div>
+
+			<div class="body">My first image threw objects together without much care - but it started the idea of creating an anachronistic landscape in front of a colorful <a href="https://images.nasa.gov/details-PIA23402">galaxy</a>.</div>
+
+			<img src="images/firstop.png" class="landscape" alt="Two Roman temples buried in a lunar landscape with Earth and a galaxy floating in the background." />
+
+			<div class="body">Instead of a flat, sculpted plain for the lunar landscape, I explored NASA’s 3D galaxy some more for something more detailed like <a href="https://nasa3d.arc.nasa.gov/detail/gale-crater">Gale Crater</a> and also added another self made building based on Il Duomo. I finally added both Voyager and one of the famous <a href="https://nasa3d.arc.nasa.gov/detail/spirit">Martian twin rover</a>.</div>
+
+			<img src="images/secondop.png" class="landscape" alt="A few Roman temples and an Italian dome buried in a lunar landscape with rover in foreground and Voyager whizzing by." />
+
+			<div class="body">The landscape needed a bit more texture and the Earth needed a storm to round out the final image.</div>
+
+			<img src="images/finalop.png" class="landscape" alt="A few Roman temples and an Italian dome buried in a lunar landscape with rover in foreground and Voyager whizzing by a cloudy Earth." />
+
 		</div>
-		<div id="Adobe">
+		<div class="footer">
+			<h5>&copy;Copyright Chloe Madsen Keilers 2020 All rights reserved</h5>
+			<h5>Design by author</h5>
 		</div>
 	</body>
+	
+	<script type="text/javascript" src="portfolio.js" />
+	<script type="text/javascript">
+		'use strict';	
+	</script>
 </html>
+
+<!--div id="data" style="display: none;">
+			This is the data page
+			<-- <script type="text/javascript" src="jsfile.js"></script> -->
+			<!-- <script src="processing-1.3.6.min.js"></script> <- should go in head
+				<canvas data-processing-sources="nuclear.pde"></canvas> <- this might be a video ...
+			>
+		</div-->
