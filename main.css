@@ -9,7 +9,7 @@ body {
 }
 
 .header {
-	border-bottom: 5px double orange;
+	border-bottom: 7px double orange;
 	position: sticky;
 	width: 100%;
 	display: flex;
