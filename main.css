@@ -5,11 +5,12 @@ body {
 .title {
 	width: 100%;
 	text-align: center;
+	margin-bottom: 0.5em;
 	/*color: orange;*/
 }
 
 .header {
-	border-bottom: 7px double orange;
+	border-bottom: 5px double orange;
 	position: sticky;
 	width: 100%;
 	display: flex;
@@ -23,16 +24,19 @@ body {
 }
 
 .footer {
-	background-color: orange;
-	position: fixed;
+	border-top: 5px double orange;
 	width: 100%;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-around;
-	bottom: 0px;
+	text-align: center;
+	/*background-color: orange;
+	position: fixed;
+	bottom: 0px;*/
 }
 
-.article {}
+.article {
+}
 
 .article:hover {
 	box-shadow: 0 0.1em 0.2em #2c3220;
@@ -77,10 +81,25 @@ figcaption {
 	display: none;
 	flex-direction: column;
 	margin: 2em;
-	padding-bottom: 3em;
+	padding: 2em;
+	box-shadow: 0 0.1em 0.2em #2c3220;
 }
 
-.author, .info, .date {
+.left {
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+	grid-gap: 1em;
+	margin-bottom: 1em;
+}
+
+.right {
+	display: grid;
+	grid-template-columns: 2fr 1fr;
+	grid-gap: 1em;
+	margin-bottom: 1em;
+}
+
+.author, .info, .date, .title {
 	font-weight: bold;
 }
 
@@ -90,15 +109,47 @@ figcaption {
 }
 
 .portrait {
-	width: 33%;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	height: 20rem;
+	width: auto;
 }
 
 .landscape {
 
 }
 
+.duo {
+	display: grid;
+	grid-template-columns: auto auto;
+	grid-gap: 1em;
+}
+
+.quad {
+	display: grid;
+	grid-template-columns: auto auto auto;
+	grid-gap: 1em;
+}
+
+.image4 {
+	grid-column: 1 / 4;
+}
+
 @media only screen and (max-width: 1000px) {
 	.grid {
+		grid-template-columns: auto auto;
+	}
+
+	.portrait {
+		height: 15em;
+	}
+
+	.image4 {
+		grid-column: 2 / 3;
+	}
+
+	.quad {
 		grid-template-columns: auto auto;
 	}
 
@@ -108,8 +159,28 @@ figcaption {
 		grid-template-columns: auto;
 	}
 
+	.portrait {
+		height: 10em;
+	}
+
 	.titleimage {
 		width: 75%;
 		height: auto;
+	}
+}
+
+@media only screen and (max-width: 650px) {
+	.duo {
+		grid-template-columns: auto;
+	}
+	.portrait {
+		width: 100%;
+		height: auto;
+	}
+	.image4 {
+		grid-column: 1 / 2;
+	}
+	.quad {
+		grid-template-columns: auto;
 	}
 }
