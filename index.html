@@ -17,19 +17,19 @@
 			<div class="grid">
 				<div class="article" onclick="openArticle('snow')">
 					<figure>
-						<img src="images/blender.jpg"  class="titleimage" alt="A snowman under a shiny copper lamp with a transparent aurora cone and movie pictures in the background" />
+						<img src="images/blender.jpg" class="titleimage" alt="A snowman under a shiny copper lamp with a transparent aurora cone and movie pictures in the background" />
 						<figcaption>The Snowman</figcaption>
 					</figure>
 				</div>
 				<div class="article" onclick="openArticle('opportunity')">
 					<figure>
-						<img src="images/finalop.jpg"  class="titleimage" alt="A few Roman temples and an Italian dome buried in a lunar landscape with rover in foreground and Voyager whizzing by a cloudy Earth." />
+						<img src="images/finalop.jpg" class="titleimage" alt="A few Roman temples and an Italian dome buried in a lunar landscape with rover in foreground and Voyager whizzing by a cloudy Earth." />
 						<figcaption>Opportunity Knocks</figcaption>
 					</figure>
 				</div>
 				<a href="http://hearchloe.blogspot.com/" class="article">
 					<figure>
-						<img src="images/cello.png"  class="titleimage" alt="Author and Branden the acoustic cello with the orange cello case." />
+						<img src="images/cello.png" class="titleimage" alt="Author and Branden the acoustic cello with the orange cello case." />
 						<figcaption>HearChloe Blog (external link)</figcaption>
 					</figure>
 				</a>
@@ -38,38 +38,63 @@
 		<div id="snow" style="display:none">
 			<div class="exit" onclick="closeArticle('snow')">X</div>
 
+			<div class="title">The Snowman</div>
 			<div class="author">Creators: Chloe Keilers, Raymond Yao.</div>
 			<div class="info">Blender, OpenGL, Raytracing</div>
 			<div class="date">December 2019</div>
 
-			<div class="body">This is our final project for CS 148, an introduction to computer graphics. We wanted to create an image of fantasy and including a focus on a reflexive surface. Inspired by the upcoming winter break and a beautiful picture of an <a href="https://pbs.twimg.com/media/EEbtBwPUwAATWE1.jpg">aurora</a>, we decided on a little snowman under a metallic lamp that reflected the room as the reference image shows.</div>
+			<div class="body">This is our final project for CS 148, an introduction to computer graphics. We wanted to create an image of fantasy and including a focus on a reflexive surface. Inspired by the upcoming winter break and a beautiful picture of an <a href="https://pbs.twimg.com/media/EEbtBwPUwAATWE1.jpg">aurora</a>, we decided on a little snowman under a metallic lamp that reflected the room as the reference image (Figure 1) shows.</div>
 
-			<img src="images/lamp.jpg" class="portrait" alt="A copper lamp reflecting the room" />
+			<div class="body">Each of us created several objects in the room include the snowman with the hat, the lamp, and the computer monitor. Our first draft, figure 2, was in OpenGL with horrible lighting.</div>
 
-			<div class="body">Each of us created several objects in the room include the snowman with the hat, the lamp, and the computer monitor. Our first draft was in OpenGL with horrible lighting.</div>
+			<div class="duo">
+				<figure>
+					<img src="images/lamp.jpg" class="portrait" alt="A copper lamp reflecting the room" />
+					<figcaption>Figure 1: One of the snowman and room lamp reference image</figcaption>
+				</figure>
 
-			<img src="images/opengl.png" class="portrait" alt="A snowman on a desk with a lamp and really crazy lighting" />
+				<figure>
+					<img src="images/opengl.png" class="portrait" alt="A snowman on a desk with a lamp and really crazy lighting" />
+					<figcaption>Figure 2: First draft of snowman in openGL</figcaption>
+				</figure>
+			</div>
 
-			<div class="body">While we continued to find objects and texture images for the rest of the room, we used Blender to arrange objects, place lighting, and test camera angles. In lieu of a flat background in the first draft, we put holiday movie posters on the background wall - <a href="https://hgtvhome.sndimg.com/content/dam/images/hgtv/editorial/blogs/unsized/Kayla/Rudolph.jpg">Rudolph Poster</a>, <a href="https://www.deleuksteonderzetters.nl/media/catalog/product/cache/30/small_image/9df78eab33525d08d6e5fb8d27136e95/1/1/1101017-xmas26.jpg">Frosty Poster</a>, and the <a href="https://storage.googleapis.com/circlesoft/document/photos/002/745/029/large_9780008183493.jpg?1544841950">Grinch Poster</a>. The computer monitor is a screenshot of the class’s forum page with a cheeky request from the snowman on how to get an A.</div>
+			<div class="body">While we continued to find objects and texture images for the rest of the room, we used Blender to arrange objects, place lighting, and test camera angles. Figure 3 shows the final textures and objects arrayed in Blender. In lieu of a flat background in the first draft, we put holiday movie posters on the background wall - <a href="https://hgtvhome.sndimg.com/content/dam/images/hgtv/editorial/blogs/unsized/Kayla/Rudolph.jpg">Rudolph Poster</a>, <a href="https://www.deleuksteonderzetters.nl/media/catalog/product/cache/30/small_image/9df78eab33525d08d6e5fb8d27136e95/1/1/1101017-xmas26.jpg">Frosty Poster</a>, and the <a href="https://storage.googleapis.com/circlesoft/document/photos/002/745/029/large_9780008183493.jpg?1544841950">Grinch Poster</a>. The computer monitor is a screenshot of the class’s forum page with a cheeky request from the snowman on how to get an A.</div>
 
-			<img src="images/blender.jpg" class="landscape" alt="A snowman under a shiny copper lamp with a transparent aurora cone and movie pictures in the background" />
+			<div class="body">We ran into some trouble when translating our final vision from Blender to raytracing, specifically with a semi-transparent cone with an aurora texture. The cone could either be transparent, but only let the ray bounce once or reflexive as shown in Figure 4. </div>
 
-			<div class="body">We ran into some trouble when translating our final vision from Blender to raytracing, specifically with a semi-transparent cone with an aurora texture. The cone could either be transparent, but only let the ray bounce once or reflexive. </div>
+			<div class="body">Figure 5 shows one test which changed the color of the lights around the lamp to see what was going through which resulted in a cool picture but alas no solution. </div>
 
-			<img src="images/rayreflex.png" class="landscape" alt="A darker image than the Blender image due to the rays not bouncing in transparent and reflexive material.">
+			<div class="body">Due to time constraints we had to remove the cone for the final image in Figure 6. The final raytrace rendering took 24 hours to compile.</div>
 
-			<div class="body">One test we did try was changing the color of the lights to see what was going through which resulted in a cool picture but alas no solution. </div>
+			<div class="quad">
+				<figure>
+					<img src="images/blender.jpg" class="landscape" alt="A snowman under a shiny copper lamp with a transparent aurora cone and movie pictures in the background" />
+					<figcaption>Figure 3: Snowman in Blender</figcaption>
+				</figure>
 
-			<img src="images/raydisco.png" class="landscape" alt="As a test, different color lights were placed in the lamp which resulted in a very colorful image.">
+				<figure>
+					<img src="images/rayreflex.png" class="landscape" alt="A darker image than the Blender image due to the rays not bouncing in transparent and reflexive material." />
+					<figcaption>Figure 4: Raytraced Snowman with reflexive aurora cone</figcaption>
+				</figure>
 
-			<div class="body">Due to time constraints we had to remove the cone for the final image. The final raytrace rendering took 24 hours to compile.</div>
+				<figure>
+					<img src="images/raydisco.png" class="landscape" alt="As a test, different color lights were placed in the lamp which resulted in a very colorful image." />
+					<figcaption>Figure 5: Raytraced Snowman with disco lights</figcaption>
+				</figure>
 
-			<img src="images/rayfinal.png" class="landscape" alt="The final ray-trade image, just as shown in the Blender but a little darker.">
+				<figure class="image4">
+					<img src="images/rayfinal.png" class="landscape" alt="The final ray-trade image, just as shown in the Blender but a little darker." />
+					<figcaption>Figure 6: Final Raytraced Snowman image without cone.</figcaption>
+				</figure>
+			</div>
 
 		</div>
+
 		<div id="opportunity" style="display:none">
 			<div class="exit" onclick="closeArticle('opportunity')">X</div>
 
+			<div class="title">Opportunity Knocks</div>
 			<div class="author">Creator: Chloe Keilers</div>
 			<div class="info">Blender</div>
 			<div class="date">October 2019</div>
@@ -78,15 +103,24 @@
 
 			<div class="body">My first image threw objects together without much care - but it started the idea of creating an anachronistic landscape in front of a colorful <a href="https://images.nasa.gov/details-PIA23402">galaxy</a>.</div>
 
-			<img src="images/firstop.jpg" class="landscape" alt="Two Roman temples buried in a lunar landscape with Earth and a galaxy floating in the background." />
+			<figure>
+				<img src="images/firstop.jpg" class="landscape" alt="Two Roman temples buried in a lunar landscape with Earth and a galaxy floating in the background." />
+				<figcaption>Figure 1: A flat lunar moonscape with temples thrown in randomly</figcaption>
+			</figure>
 
 			<div class="body">Instead of a flat, sculpted plain for the lunar landscape, I explored NASA’s 3D galaxy some more for something more detailed like <a href="https://nasa3d.arc.nasa.gov/detail/gale-crater">Gale Crater</a> and also added another self made building based on Il Duomo. I finally added both Voyager and one of the famous <a href="https://nasa3d.arc.nasa.gov/detail/spirit">Martian twin rover</a>.</div>
 
-			<img src="images/secondop.jpg" class="landscape" alt="A few Roman temples and an Italian dome buried in a lunar landscape with rover in foreground and Voyager whizzing by." />
+			<figure>
+				<img src="images/secondop.jpg" class="landscape" alt="A few Roman temples and an Italian dome buried in a lunar landscape with rover in foreground and Voyager whizzing by." />
+				<figcaption>Figure 2: Additional objects from NASA gallery thrown in</figcaption>
+			</figure>
 
 			<div class="body">The landscape needed a bit more texture and the Earth needed a storm to round out the final image.</div>
 
-			<img src="images/finalop.jpg" class="landscape" alt="A few Roman temples and an Italian dome buried in a lunar landscape with rover in foreground and Voyager whizzing by a cloudy Earth." />
+			<figure>
+				<img src="images/finalop.jpg" class="landscape" alt="A few Roman temples and an Italian dome buried in a lunar landscape with rover in foreground and Voyager whizzing by a cloudy Earth." />
+				<figcaption>Figure 3: Final image with texture and lighting</figcaption>
+			</figure>
 
 		</div>
 		<div class="footer">
