@@ -32,9 +32,7 @@ body {
 	bottom: 0px;
 }
 
-.article {
-	min-width: 300px;
-}
+.article {}
 
 .article:hover {
 	box-shadow: 0 0.1em 0.2em #2c3220;
@@ -97,4 +95,21 @@ figcaption {
 
 .landscape {
 
+}
+
+@media only screen and (max-width: 1000px) {
+	.grid {
+		grid-template-columns: auto auto;
+	}
+
+}
+@media only screen and (max-width: 800px) {
+	.grid {
+		grid-template-columns: auto;
+	}
+
+	.titleimage {
+		width: 75%;
+		height: auto;
+	}
 }
